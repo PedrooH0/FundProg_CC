@@ -1,0 +1,91 @@
+algoritmo "Q.1 Utilize uma estrutura de controle em um algoritmo que imprime a tabuada de 1 a 3. OBS: Pode-se escolher qualquer operação aritmética."
+
+
+var
+  operacao: caractere
+  i,result: inteiro
+
+
+inicio
+  operacao <- "repete"
+  enquanto (operacao <> "sum") e (operacao <> "sub") e (operacao <> "mult") e (operacao <> "div") faca
+    escreval("Tabuado do 1 ao 3")
+    escreval("Escolha a operação aritmética que deseja ver a tabuada (sum=soma / sub=subtração / mult=multiplicação / div=divisão ): ")
+    leia(operacao)
+    se(operacao = "sum") entao
+    para i de 1 ate 10 faca
+      result <- i+1
+      escreval(i," + 1 = ",result)
+    fimpara
+    escreval("")
+    para i de 1 ate 10 faca
+      result <- i+2
+      escreval(i," + 2 = ",result)
+    fimpara
+    escreval("")
+    para i de 1 ate 10 faca
+      result <- i+3
+      escreval(i," + 3 = ",result)
+    fimpara
+    senao
+      se(operacao = "sub") entao
+        para i de 1 ate 11 faca
+          result <- i-1
+          escreval(i," - 1 = ",result)
+        fimpara
+        escreval("")
+        para i de 2 ate 12 faca
+          result <- i-2
+          escreval(i," - 2 = ",result)
+        fimpara
+        escreval("")
+        para i de 3 ate 13 faca
+          result <- i-3
+          escreval(i," - 3 = ",result)
+        fimpara
+      senao
+        se(operacao = "mult") entao
+          para i de 1 ate 10 faca
+            result <- i*1
+            escreval(i," * 1 = ",result)
+          fimpara
+          escreval("")
+          para i de 1 ate 10 faca
+            result <- i*2
+            escreval(i," * 2 = ",result)
+          fimpara
+          escreval("")
+          para i de 1 ate 10 faca
+            result <- i*3
+            escreval(i," * 3 = ",result)
+          fimpara
+        senao
+          se(operacao = "div") entao
+            para i de 1 ate 10 faca
+              result <- i/1
+              escreval(i," ÷ 1 = ",result)
+            fimpara
+            escreval("")
+            para i de 2 ate 20 passo 2 faca
+              result <- i/2
+              escreval(i," ÷ 2 = ",result)
+            fimpara
+            escreval("")
+            para i de 3 ate 30 passo 3 faca
+              result <- i/3
+              escreval(i," ÷ 3 = ",result)
+            fimpara
+          senao
+            timer 2000
+            escreval("Essa opção não existe, tente novamente")
+            escreva("")
+            timer 0
+            limpatela
+           
+          fimse
+        fimse
+      fimse
+    fimse  
+  fimenquanto
+fimalgoritmo
+
