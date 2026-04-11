@@ -1,0 +1,14 @@
+algoritmo "Q.2 Faça um algoritmo que receba o raio R de uma esfera e calcule o seu volume: V = (4 * Pi * R³)/3."
+
+var
+  raio, pi, volume: real
+
+inicio
+
+  escreval("Digite um valor para o raio de uma esfera para calcular seu volume: ")
+  leia(raio)
+  pi <- 3.14
+  volume <- (4*pi*(raio^3))/3
+  escreval("O volume da esfera de raio ",raio," é igual a ",volume)
+
+fimalgoritmo
