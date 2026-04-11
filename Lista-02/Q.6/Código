@@ -1,0 +1,15 @@
+algoritmo "Q.6 Crie um algoritmo para ler 3 valores inteiros e imprimir o quadrado do 1o + a soma dos outros dois."
+
+var
+  num1, num2, num3, result: inteiro
+
+inicio
+
+  escreval("Digite três números: ")
+  leia(num1)
+  leia(num2)
+  leia(num3)
+  result <- (num1^2) + num2 + num3
+  escreval("O quadrado do número ",num1," mais a soma de ",num2," e ",num3," é: ",result)
+
+fimalgoritmo
