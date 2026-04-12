@@ -1,1 +1,54 @@
-teste
+algoritmo "Q.9 Faça um algoritmo que leia do teclado um caractere c e dois inteiros n1 e n2. Proceda da seguinte formautilizando uma estrutura de controle:"
+
+
+var
+  operacao: caractere
+  n1,n2,result: inteiro
+
+
+inicio
+  operacao <- "repete"
+  enquanto (operacao <> "+") e (operacao <> "-") e (operacao <> "*") e (operacao <> "/") faca
+    escreval("Escolha a operação aritmética que deseja fazer o cálculo (+ = soma | - = subtração | * = multiplicação | / = divisão ): ")
+    leia(operacao)
+    
+    se(operacao = "+") entao
+      escreval("Escreva dois números para realizar essa operação: ")
+      leia(n1)
+      leia(n2)
+      result <- n1 + n2
+      escreval("O resultado da soma de ",n1," e ",n2," é ",result)
+    senao
+      se(operacao = "-") entao
+        escreval("Escreva dois números para realizar essa operação: ")
+        leia(n1)
+        leia(n2)
+        result <- n1 - n2
+        escreval("O resultado da subtração de ",n1," e ",n2," é ",result)
+      senao
+        se(operacao = "*") entao
+          escreval("Escreva dois números para realizar essa operação: ")
+          leia(n1)
+          leia(n2)
+          result <- n1 * n2
+          escreval("O resultado da multiplicação de ",n1," e ",n2," é ",result)
+        senao
+          se(operacao = "/") entao
+            escreval("Escreva dois números para realizar essa operação: ")
+            leia(n1)
+            leia(n2)
+            result <- n1 / n2
+            escreval("O resultado da divisão de ",n1," e ",n2," é ",result)
+          senao
+            timer 2000
+            escreval("Operação inválida, tente novamente")
+            escreva("")
+            timer 0
+            limpatela
+           
+          fimse
+        fimse
+      fimse
+    fimse  
+  fimenquanto
+fimalgoritmo
