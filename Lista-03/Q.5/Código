@@ -1,0 +1,35 @@
+algoritmo "Q.5 Faça um algoritmo que leia a data de nascimento de 10 pessoas, depois calcule a idade de cada uma, 9informando-a. E, por último, mostre qual a pessoa mais jovem e a mais velha do grupo."
+
+var
+  i, ano_nascimento, ano_atual, maior_idade, menor_idade : inteiro
+  idades: vetor [1..10] de inteiro
+inicio
+  ano_atual<-2026
+  para i de 1 ate 10 faca
+    escreval("Escreva o ano de nascimento da ",i,"ª pessoa")
+    leia(ano_nascimento)
+    idades[i]<-ano_atual-ano_nascimento
+
+    se (i = 1) entao
+      maior_idade <- idades[i]
+      menor_idade <- idades[i]
+    senao
+      se idades[i]>maior_idade entao
+        maior_idade<-idades[i]
+      fimse
+      se idades[i]<menor_idade entao
+        menor_idade<-idades[i]
+      fimse
+    fimse
+    limpatela
+  fimpara
+
+  limpatela
+
+  para i de 1 ate 10 faca
+    escreval("Pessoa ", i, ": ", idades[i], " anos.")
+  fimpara
+
+  escreval("A pessoa mais velha tem ",maior_idade," anos, e a mais nova tem ",menor_idade," anos")
+  
+fimalgoritmo
