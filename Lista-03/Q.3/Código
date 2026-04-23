@@ -1,0 +1,25 @@
+algoritmo "Q.3 A série fibonacci é formada pele seguinte sequência: 1, 1, 2, 3, 5, 8, 13, 13, 21, 34, 55...etc. Escreva um algoritmo que gere a serie fibonacci até o 12o termo;"
+
+var
+   i, atual, anterior, proximo : inteiro
+inicio
+   
+   anterior <- 1
+   atual <- 1
+   
+   escreva(anterior, ", ")
+   escreva(atual, ", ")
+   
+   para i de 3 ate 12 faca
+      proximo <- atual + anterior
+      
+      se i = 12 entao
+         escreva(proximo)
+      senao
+         escreva(proximo, ", ")
+      fimse
+      
+      anterior <- atual
+      atual <- proximo
+   fimpara
+fimalgoritmo
