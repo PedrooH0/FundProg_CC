@@ -2,9 +2,9 @@ algoritmo "Q.6 Fazer um algoritmo para calcular e imprimir a media aritmética d
 
 var
   i: inteiro
-  media, media_turma, nota01, nota02, nota03: real
-  medias: vetor [1..10] de real
-  situacao: vetor [1..10] de caractere
+  media, soma_medias, media_geral_turma, nota01, nota02, nota03: real
+  medias_list: vetor [1..10] de real
+  situacao_list: vetor [1..10] de caractere
 inicio
   para i de 1 ate 10 faca
     escreval("Escreva a 1ª nota do ",i,"ª aluno")
@@ -20,24 +20,29 @@ inicio
     limpatela
 
     media <- (nota01 + nota02 + nota03)/3
-    medias[i] <- media
+    medias_list[i] <- media
 
     se media >= 7 entao
-      situacao[i] <- "Aprovado"
-    fimse
-
-    se 4<=media<=6.9 entao
-      situacao[i] <- "AF"
-    fimse
-
-    se media<4 entao
-      situacao[i] <- "Reprovado"
+      situacao_list[i] <- "Aprovado(a)"
+    senao
+      se 4<=media e media<=6.9 entao
+        situacao_list[i] <- "AF"
+      senao
+        se media<4 entao
+          situacao_list[i] <- "Reprovado(a)"
+        fimse
+      fimse
     fimse
 
   fimpara
 
   para i de 1 ate 10 faca
-    escreval("A média do 1")
+    escreval("A média do aluno(a) ",i," é: ",medias_list[i])
+    escreval("Situação: ",situacao_list[i])
+    escreval("")
+    soma_medias <- soma_medias + medias_list[i]
   fimpara
+  media_geral_turma <- soma_medias/10
+  escreval("A média geral da turma é: ",media_geral_turma)
 
 fimalgoritmo
