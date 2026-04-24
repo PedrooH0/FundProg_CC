@@ -1,0 +1,62 @@
+algoritmo "Q.7 Faça um algoritmo para ler o peso e altura de 10 pessoas, em seguida, deve-se exibir o resultado, conforme os dados da tabela abaixo."
+
+var
+  i: inteiro
+  altura,peso,imc: real
+  altura_lista: vetor [1..10] de real
+  peso_lista: vetor [1..10] de real
+  imc_lista: vetor [1..10] de real
+  imc_class_lista: vetor [1..10] de caractere
+
+
+inicio
+
+  para i de 1 ate 10 faca
+    escreval("Escreva o peso da ",i,"ª pessoa: ")
+    leia(peso)
+    peso_lista[i] <- peso
+    limpatela
+
+    escreval("Agora escreva a altura: ")
+    leia(altura)
+    altura_lista[i] <- altura
+    limpatela
+
+    imc<-peso/(altura*altura)
+    imc_lista[i] <- imc
+
+    se imc<18.5 entao
+      imc_class_lista[i] <- "Abaixo do peso"
+    senao
+      se (imc>=18.5) e (imc<=24.9) entao
+        imc_class_lista[i] <- "Peso Normal"
+      senao
+        se (imc>=25) e (imc<=29.9) entao
+          imc_class_lista[i] <- "Sobrepeso"
+        senao
+          se (imc>=30) e (imc<=34.9) entao
+            imc_class_lista[i] <- "Obesidade Grau I"
+          senao
+            se (imc>=35) e (imc<=39.9) entao
+             imc_class_lista[i] <- "Obesidade Grau II"
+            senao
+              se imc>=40 entao
+                imc_class_lista[i] <- "Obesidade Grau III ou Mórbida"
+              fimse
+            fimse
+          fimse
+        fimse
+      fimse
+    fimse
+  fimpara
+
+  para i de 1 ate 10 faca
+    escreval(i,"ª pessoa")
+    escreval("Peso: ",peso_lista[i]," Kg")
+    escreval("Altura: ",altura_lista[i]," m")
+    escreval("IMC: ",imc_lista[i]:4:1)
+    escreval("Classificção do IMC: ",imc_class_lista[i])
+    escreval("")
+  fimpara
+
+fimalgoritmo
