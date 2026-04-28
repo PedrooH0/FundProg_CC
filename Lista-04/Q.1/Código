@@ -1,0 +1,21 @@
+algoritmo "1) As maçãs custam R$ 1,30 cada se forem compradas menos de uma dúzia, e R$ 1,00 se forem compradas pelo menos 12. Escreva um programa que leia o número de maçãs compradas, calcule e escreva o custo total da compra. OBS: experimentar com menos de 12 e com mais de 12 quantidades."
+
+var
+  quantidade: inteiro
+  valor_total: real
+
+inicio
+
+  escreval("Quantas maçãs você comprou: ")
+  leia(quantidade)
+  se (quantidade < 12) entao
+    valor_total <- quantidade * 1.30
+  senao
+    se(quantidade>=12) entao
+      valor_total <- quantidade * 1.00
+    fimse
+  fimse
+
+  escreval("Você comprou ",quantidade," maçãs e pagou um total de R$ ",valor_total," por elas")
+
+fimalgoritmo
