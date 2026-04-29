@@ -1,1 +1,52 @@
+algoritmo "2) A jornada de trabalho semanal de um funcionário é de 40 horas. O funcionário que trabalhar mais de 40 horas receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de 50%. Escreva um algoritmo que leia o número de horas trabalhadas em um mês, o salário por hora e escreva o salário total do funcionário, que deverá ser acrescido das horas extras, caso tenham sido trabalhadas, em um total de 10 funcionários e depois mostre também qual destes obteve maior número de horas trabalhadas. (considere um mês com 4 semanas exatas)."
 
+var
+   i, horas_trabalhadas, maior, funcionario: inteiro
+   salario_total, valor_hora, salario_extra: real
+   salarioTotal_list: vetor [1..10] de real
+
+
+inicio
+      maior <- 0
+      para i de 1 ate 10 faca
+           escreval("Informe a quantidade de horas trabalhadas do funcionário ",i,":")
+           leia(horas_trabalhadas)
+           limpatela
+           escreval("Informe o valor da hora de trabalho do funcionário ",i,":")
+           leia(valor_hora)
+           limpatela
+           salario_total <- horas_trabalhadas * valor_hora
+           
+           se (horas_trabalhadas>maior) entao
+              maior <- horas_trabalhadas
+              funcionario <- i
+           fimse
+           se (horas_trabalhadas<160) entao
+              salarioTotal_list[i] <- 0
+           senao
+                se (horas_trabalhadas=160) entao
+                   salarioTotal_list[i] <- salario_total
+                senao
+                     salario_extra <- (horas_trabalhadas - 160) * valor_hora * 1.5
+                     salarioTotal_list[i] <- salario_total + salario_extra
+                fimse
+           fimse
+      fimpara
+
+      para i de 1 ate 10 faca
+           se (salarioTotal_list[i]=0) entao
+              escreval("Funcionário ",i)
+              escreval("Horas de trabalho abaixo das 160 necessárias")
+              escreval("")
+           senao
+                escreval("Funcionário ",i)
+                escreval("Salário total: R$",salarioTotal_list[i])
+                escreval("")
+           fimse
+      fimpara
+      
+      escreval("Funcionário com mais horas trabalhadas:")
+      escreval("Funcionário ",funcionario)
+      escreval(maior,"  horas trabalhadas")
+
+fimalgoritmo
