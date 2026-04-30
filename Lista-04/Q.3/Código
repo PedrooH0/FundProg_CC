@@ -2,50 +2,43 @@ algoritmo "3) Faça um algoritmo para ler o saldo de 5 clientes. Depois, deverá
 
 var
    i: inteiro
-   saldo, credito, debito: real
-   saldos_list: vetor [1..5] de real
-
+   saldoInicial_list: vetor [1..5] de real
+   credito_list: vetor [1..5] de real
+   debito_list: vetor [1..5] de  real
+   saldoFinal_list: vetor [1..5] de real
 
 inicio
       para i de 1 ate 5 faca
            escreval("Informe o saldo do cliente ",i,":")
-           leia(saldo)
+           leia(saldoInicial_list[i])
            limpatela
            escreval("Informe o valor de crédito adicionado ao saldo:")
-           leia(credito)
+           leia(credito_list[i])
            limpatela
-           salario_total <- horas_trabalhadas * valor_hora
-           
-           se (horas_trabalhadas>maior) entao
-              maior <- horas_trabalhadas
-              funcionario <- i
-           fimse
-           se (horas_trabalhadas<160) entao
-              salarioTotal_list[i] <- 0
-           senao
-                se (horas_trabalhadas=160) entao
-                   salarioTotal_list[i] <- salario_total
-                senao
-                     salario_extra <- (horas_trabalhadas - 160) * valor_hora * 1.5
-                     salarioTotal_list[i] <- salario_total + salario_extra
-                fimse
-           fimse
+           escreval("Informe o valor de débito que deseja retirar do saldo:")
+           leia(debito_list[i])
+           limpatela
+           saldoFinal_list[i] <- (saldoInicial_list[i] + credito_list[i]) - debito_list[i]
       fimpara
 
-      para i de 1 ate 10 faca
-           se (salarioTotal_list[i]=0) entao
-              escreval("Funcionário ",i)
-              escreval("Horas de trabalho abaixo das 160 necessárias")
+      para i de 1 ate 5 faca
+           se (saldoFinal_list[i]<0) entao
+              saldoFinal_list[i] <- saldoInicial_list[i] + credito_list[i]
+              escreval("Cliente ",i)
+              escreval("Saldo inicial: R$",saldoInicial_list[i])
+              escreval("Valor de crédito acrescentado: R$",credito_list[i])
+              escreval("Valor de débito para retirar do saldo: R$",debito_list[i])
+              escreval("Saldo insuficiente")
+              escreval("Saldo final: R$",saldoFinal_list[i])
               escreval("")
            senao
-                escreval("Funcionário ",i)
-                escreval("Salário total: R$",salarioTotal_list[i])
-                escreval("")
+              escreval("Cliente ",i)
+              escreval("Saldo inicial: R$",saldoInicial_list[i])
+              escreval("Valor de crédito acrescentado: R$",credito_list[i])
+              escreval("Valor de débito para retirar do saldo: R$",debito_list[i])
+              escreval("Saldo final: R$",saldoFinal_list[i])
+              escreval("")
            fimse
       fimpara
-      
-      escreval("Funcionário com mais horas trabalhadas:")
-      escreval("Funcionário ",funcionario)
-      escreval(maior,"  horas trabalhadas")
 
 fimalgoritmo
