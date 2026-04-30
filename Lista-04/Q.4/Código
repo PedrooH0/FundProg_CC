@@ -1,1 +1,63 @@
+algoritmo "4) O sistema do governo quer verificar um grupo de empregados apto para a aposentadoria ou não. Para estar em condições, os seguintes requisitos devem ser satisfeitos: - Ter no mínimo 65 anos de idade e ter trabalhado no mínimo 35 anos – homens; ter 60 anos de idade e ter trabalhado 30 anos - mulheres. Com base nessas informações, faça um algoritmo que leia (para 6 empregados): o nome, sexo, ano de nascimento e os anos de contribuições. O programa deverá escrever: nome, idade, sexo e o tempo de trabalho de cada empregado com a mensagem 'Apto para aposentadoria' ou 'Não apto para aposentadoria'."
 
+var
+   i, idade, tempo_trabalho: inteiro
+   nome, sexo, aptidao: caractere
+   nome_list: vetor [1..6] de caractere
+   idade_list: vetor [1..6] de inteiro
+   sexo_list: vetor [1..6] de caractere
+   tempoTrabalho_list: vetor [1..6] de inteiro
+   aptidao_list: vetor [1..6] de caractere
+
+
+inicio
+      para i de 1 ate 6 faca
+           escreval("Informe o nome do funcionário:")
+           leia(nome)
+           nome_list[i] <- nome
+           limpatela
+           escreval("Informe a idade do funcionário:")
+           leia(idade)
+           idade_list[i] <- idade
+           limpatela
+           escreval("Informe o sexo do funcionário (M/F):")
+           leia(sexo)
+           sexo <- maiusc(sexo)
+           sexo_list[i] <- sexo
+           limpatela
+           escreval("Informe o tempo de trabalho do funcionário em anos:")
+           leia(tempo_trabalho)
+           tempoTrabalho_list[i] <- tempo_trabalho
+           limpatela
+
+           se (sexo="M") entao
+              se (idade>=65) e (tempo_trabalho>=35) entao
+                 aptidao <- "Apto para aposentadoria"
+                 aptidao_list[i] <- aptidao
+              senao
+                 aptidao <- "Não apto para aposentadoria"
+                 aptidao_list[i] <- aptidao
+              fimse
+           fimse
+           
+           se (sexo="F") entao
+              se (idade>=60) e (tempo_trabalho>=30) entao
+                 aptidao <- "Apto para aposentadoria"
+                 aptidao_list[i] <- aptidao
+              senao
+                 aptidao <- "Não apto para aposentadoria"
+                 aptidao_list[i] <- aptidao
+              fimse
+           fimse
+      fimpara
+
+      para i de 1 ate 6 faca
+          escreval("Nome: ",nome_list[i])
+          escreval("Idade: ",idade_list[i])
+          escreval("Sexo: ",sexo_list[i])
+          escreval("Tempo de trabalho: ",tempoTrabalho_list[i])
+          escreval("Aptidão: ",aptidao_list[i])
+          escreval("")
+      fimpara
+
+fimalgoritmo
