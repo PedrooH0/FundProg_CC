@@ -1,1 +1,26 @@
+algoritmo "5) Escreva um algoritmo para imprimir os números de 1 (inclusive) a 10 (inclusive) em ordem crescente, e depois, em ordem decrescente."
 
+var
+   i: inteiro
+   crescente_list,decrescente_list: vetor [1..10] de inteiro
+
+inicio
+      para i de 1 ate 10 faca
+           crescente_list[i] <- i
+           se(crescente_list[i]=10) entao
+             escreva(crescente_list[i])
+           senao
+             escreva(crescente_list[i]," ")
+           fimse
+      fimpara
+      escreval("")
+      para i de 1 ate 10 faca
+           decrescente_list[i] <- crescente_list[(11-i)]
+           se(decrescente_list[i]=1) entao
+             escreva(decrescente_list[i])
+           senao
+             escreva(decrescente_list[i]," ")
+           fimse
+      fimpara
+
+fimalgoritmo
