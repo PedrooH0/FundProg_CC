@@ -1,1 +1,31 @@
+algoritmo "6) A prefeitura de uma cidade deseja fazer uma pesquisa para coletar dados sobre o salário e número de filhos de cada habitante. Faça um algoritmo para ler os dados de 5 habitantes e escrever: a) Média de salário da população; b) Média do número de filhos; c) Percentual de pessoas com salário menor que R$ 1000,00."
 
+var
+   i,contador,soma_filho: inteiro
+   porcentagem_menor,soma_salario: real
+   numFilho_list: vetor [1..5] de inteiro
+   salario_list: vetor [1..5] de real
+
+inicio
+      para i de 1 ate 5 faca
+           escreval("Salário da pessoa ",i,":")
+           leia(salario_list[i])
+           limpatela
+           escreval("Quantidade de filhos da pessoa ",i,":")
+           leia(numFilho_list[i])
+           limpatela
+           se (salario_list[i]<1000) entao
+              contador <- contador + 1
+           fimse
+      fimpara
+      
+      para i de 1 ate 5 faca
+           soma_salario <- soma_salario + salario_list[i]
+           soma_filho <- soma_filho + numFilho_list[i]
+      fimpara
+      
+      escreval("Média salarial da população: R$",(soma_salario/5))
+      escreval("Média de filhos da população: ",(soma_filho\5)," filhos")
+      escreval("Percentual de pessoas com salário menor que R$1000,00: ",((contador/5)*100),"%")
+
+fimalgoritmo
