@@ -1,0 +1,36 @@
+algoritmo "Q.4 Fazer um algoritmo para ler 10 números inteiros quaisquer e informar quantos e quais são os números primos."
+
+var
+  i, j, quant, divi, num: inteiro
+  primos_digitados: vetor [1..10] de inteiro
+inicio
+  para i de 1 ate 10 faca
+    escreval("Digite um número: ")
+    leia(num)
+    
+    divi<-0
+
+    para j de 1 ate num faca
+      se (num mod j = 0) entao
+        divi <- divi + 1
+      fimse
+    fimpara
+
+    se (divi = 2) entao
+      quant <- quant + 1
+      primos_digitados[quant] <- num
+    fimse 
+  
+
+  limpatela
+
+  fimpara
+  se quant = 0 entao
+    escreval("Você não inseriu nenhum número primo")
+  senao
+    escreval("você inseriu ",quant," número(os) primo(os), sendo ele(es): ")
+    para i de 1 ate quant faca
+      escreva(primos_digitados[i], " ")
+    fimpara
+  fimse
+fimalgoritmo

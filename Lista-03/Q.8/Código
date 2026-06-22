@@ -1,0 +1,67 @@
+algoritmo "Q.8 Construa um algoritmo para ler salários de 10 funcionários de uma empresa e depois calcular e informar:"
+
+var
+  i: inteiro
+  salario,maior,menor,media_salarial: real
+  salario_lista: vetor [1..10] de real
+  imposto_lista: vetor [1..10] de caractere
+  salario_liquido_lista: vetor [1..10] de real
+
+inicio
+
+  para i de 1 ate 10 faca
+    escreval("Escreva o salário da ",i,"ª pessoa: ")
+    leia(salario)
+    salario_lista[i] <- salario
+    limpatela
+
+    se salario<=1500 entao
+       imposto_lista[i] <- "Isento"
+       salario_liquido_lista[i] <- salario
+    senao
+         se (salario>1500) e (salario<=2000) entao
+            imposto_lista[i] <- "10% de imposto"
+            salario_liquido_lista[i] <- salario*(90/100)
+         senao
+              se salario>2000 entao
+                 imposto_lista[i] <- "15% de imposto"
+                 salario_liquido_lista[i] <- salario*(85/100)
+              fimse
+         fimse
+    fimse
+    
+    
+    se i=1 entao
+       maior <- salario
+       menor <- salario
+    senao
+         se salario>maior entao
+            maior <- salario
+         senao
+              se salario<menor entao
+                 menor <- salario
+              fimse
+         fimse
+    fimse
+          
+    media_salarial <- media_salarial + salario
+
+
+  fimpara
+
+  media_salarial <- media_salarial/10
+
+  para i de 1 ate 10 faca
+    escreval(i,"ª pessoa")
+    escreval("salário: R$ ",salario_lista[i])
+    escreval("Imposto: ",imposto_lista[i])
+    escreval("Salário Líquido: R$ ",salario_liquido_lista[i])
+    escreval("")
+  fimpara
+  
+  escreval("Maior salário: R$ ",maior)
+  escreval("Menor salário: R$ ",menor)
+  escreval("Média salarial: R$ ",media_salarial)
+  
+
+fimalgoritmo

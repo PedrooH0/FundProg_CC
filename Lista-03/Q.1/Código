@@ -1,0 +1,26 @@
+algoritmo "Q.1 Fazer um algoritmo para ler 10 números digitados pelo usuário e depois informar qual maior valor e qual menor valor informado;"
+
+var
+  i, maior, menor, num: inteiro
+
+inicio
+  para i de 1 ate 10 faca
+    escreval("Digite um número: ")
+    leia(num)
+    se(i=1) entao
+      maior<-num
+      menor<-num
+    fimse 
+
+    se(num>maior) entao
+      maior<-num
+    fimse
+
+    se(num<menor) entao
+      menor<-num
+    fimse
+
+    limpatela
+  fimpara
+  escreval("O maior e o menor número digitados são, respectivamente: ",maior," e ",menor)
+fimalgoritmo

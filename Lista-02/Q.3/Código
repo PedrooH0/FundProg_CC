@@ -1,0 +1,26 @@
+algoritmo "Q.3 Faça um algoritmo que leia um valor inteiro e verifica se o valor é par ou ímpar, retornando um valor booleano."
+
+var
+  numero, resto: inteiro
+  verificadorPar, verificadorImpar: logico
+
+inicio
+
+  escreval("Digite um número para verificar se é par ou ímpar ")
+  leia(numero)
+  
+  se(numero mod 2=0) entao
+    verificadorPar <- verdadeiro
+    verificadorImpar <- falso
+    escreval("Número ",numero,":")
+    escreval("Par: ",verificadorPar)
+    escreval("Ímpar: ",verificadorImpar)
+  senao
+    verificadorPar <- falso
+    verificadorImpar <- verdadeiro
+    escreval("Número ",numero,":")
+    escreval("Par: ",verificadorPar)
+    escreval("Ímpar: ",verificadorImpar)   
+  fimse
+  
+fimalgoritmo

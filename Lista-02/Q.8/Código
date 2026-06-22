@@ -1,0 +1,27 @@
+algoritmo "Q.8 Faça um algoritmo que recebe a média final de um aluno e imprima o seu conceito, conforme a tabela abaixo:"
+
+var
+  media: real
+
+inicio
+
+  escreval("Digite a sua média: ")
+  leia(media)
+  
+  se(0<=media e media<=4.9) entao
+    escreval("Você está no conceito D")
+  fimse
+
+  se(5<=media e media<=6.9) entao
+    escreval("Você está no conceito C")
+  fimse
+
+  se(7<=media e media<=8.9) entao
+    escreval("Você está no conceito B")
+  fimse
+
+  se(9<=media e media<=10) entao
+    escreval("Você está no conceito A")
+  fimse
+
+fimalgoritmo

@@ -1,0 +1,18 @@
+algoritmo "Q.2 Fazer um algoritmo para calcular e imprimir o fatorial de um número qualquer fornecido pelo usuário. (lembrando: fatorial de 0! = 1; fatorial de 1! = 1; Fatorial de N! = (N * N-1!);"
+
+var
+  i,num,fatorial: inteiro
+
+inicio
+  escreval("Digite um número: ")
+  leia(num)
+  fatorial<-1
+  se (num=0 ou num=1) entao
+    escreval("O fatorial do número ",num," é ",fatorial)
+  senao
+    para i de 1 ate num faca
+      fatorial<-i*fatorial
+    fimpara
+    escreval("O fatorial do número ",num," é ",fatorial)
+  fimse
+fimalgoritmo
